@@ -17,10 +17,10 @@ def user_creation(sender, instance, created, **kwargs):
         )
 
 
-@receiver(post_delete, sender=Profile)
-def profile_deletion(sender, instance, **kwargs):
-    user = instance.user
-    user.delete()
+# @receiver(post_delete, sender=Profile)
+# def profile_deletion(sender, instance, **kwargs):
+#     user = instance.user
+#     user.delete()
 
 
 # @receiver(post_delete, sender=User)
