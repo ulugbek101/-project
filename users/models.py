@@ -22,6 +22,9 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user.username)
 
+    def delete(self, *args, **kwargs):
+        self.user.delete()
+        super().delete(*args, **kwargs)
 
 class Skill(models.Model):
     owner = models.ForeignKey(to=Profile, on_delete=models.CASCADE, null=True, blank=True)
